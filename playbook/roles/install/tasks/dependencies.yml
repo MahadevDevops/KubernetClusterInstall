@@ -36,5 +36,6 @@
      apt:
        name: kubectl
        state: present
-     when: ansible_nodename == "kub-master"
+     when: "( inventory_hostname in groups['masters'])"
+    # when: ansible_nodename == "kub-master"
 
